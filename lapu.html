@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Lapu-Lapu: The First Philippine National Hero</title>
+    <style>
+      body {
+          font-family: 'Merriweather', serif;
+          margin: 0;
+          padding: 0;
+          background: #f0f0f0;
+          color: #5f0707;
+      }
+      .navbar {
+          background-color: #4a3728;
+          padding: 10px 20px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          position: sticky;
+          top: 0;
+          z-index: 100;
+      }
+      .navbar a {
+          color: #fce8b2;
+          text-decoration: none;
+          margin: 0 15px;
+          font-family: 'Cinzel', serif;
+          font-size: 16px;
+          transition: all 0.3s ease;
+      }
+      .navbar a:hover {
+          color: #f3d89f;
+          text-decoration: underline;
+          transform: translateY(-2px);
+      }
+      .subtitle {
+  color: white;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+      header {
+          text-align: center;
+          padding: 20px;
+          background-color: #4b1515;
+          color: white;
+          
+      }
+      header p{
+        color: #e8f1f8;
+      }
+      header h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: 3em;
+          margin: 0;
+      }
+      .profile-img {
+          width: 150px;
+          height: auto;
+          border-radius: 50%;
+          margin-top: 20px;
+          object-fit: cover;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          border: 4px solid #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .profile-img:hover {
+          transform: scale(1.05);
+      }
+      .content {
+          max-width: 900px;
+          margin: 40px auto;
+          background-color: white;
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      .content h2 {
+          font-size: 1.8em;
+          color: #5f0606;
+          border-bottom: 2px solid #4b1515;
+          padding-bottom: 10px;
+      }
+      .section-container {
+          margin-bottom: 50px;
+      }
+      .bio-container img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 8px;
+          margin: 15px 0;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .image-container {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          margin: 25px 0;
+          flex-wrap: wrap;
+      }
+      .image-container img {
+          width: 48%;
+          height: auto;
+          border-radius: 8px;
+          transition: transform 0.3s;
+      }
+      .image-container img:hover {
+          transform: scale(1.02);
+      }
+      p {
+          font-size: 1.1em;
+          line-height: 1.7;
+          color: #333;
+          text-align: center;
+      }
+      .portrait-img {
+          width: 40%;
+          float: left;
+          margin: 0 25px 15px 0;
+          border-radius: 8px;
+          box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      }
+      .clear {
+          clear: both;
+      }
+      .timeline-container {
+          background-color: #f9f9f9;
+          padding: 25px;
+          border-radius: 8px;
+          border-left: 5px solid #4b1515;
+      }
+      .timeline-container ul {
+          padding-left: 0;
+          list-style-type: none;
+      }
+      .timeline-container li {
+          font-size: 1.1em;
+          margin-bottom: 15px;
+          position: relative;
+          padding-left: 30px;
+          line-height: 1.6;
+      }
+      .timeline-container li:before {
+          content: "•";
+          color: #4b1515;
+          font-size: 1.8em;
+          position: absolute;
+          left: 0;
+          top: -5px;
+      }
+      .timeline-container strong {
+          color: #4b1515;
+      }
+      .quote-box {
+          background-color: #f5e8e8;
+          padding: 20px;
+          border-left: 5px solid #4b1515;
+          margin: 25px 0;
+          font-style: italic;
+          font-size: 1.1em;
+      }
+      .quote-box p {
+          margin: 0;
+          color: #4b1515;
+      }
+      .fact-box {
+          background-color: #e8f1f8;
+          padding: 20px;
+          border-radius: 8px;
+          margin: 25px 0;
+      }
+      .fact-box h3 {
+          color: #1a3e72;
+          margin-top: 0;
+          border-bottom: 2px solid #1a3e72;
+          padding-bottom: 5px;
+      }
+      footer {
+          text-align: center;
+          padding: 20px;
+          background-color: #1a0808;
+          color: white;
+          width: 100%;
+          margin-top: 50px;
+      }
+      footer p{
+        color: #e8f1f8;
+      }
+      .works-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 25px;
+          margin: 30px 0;
+      }
+      .work-card {
+          background: white;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s;
+      }
+      .work-card:hover {
+          transform: translateY(-5px);
+      }
+      .work-card img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+      }
+      .work-info {
+          padding: 15px;
+      }
+      .work-info h3 {
+          margin-top: 0;
+          color: #4b1515;
+      }
+      .resources {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            border-left: 4px solid #4b1515;
+        }
+        .resources h3 {
+            margin-top: 0;
+            color: #4b1515;
+        }
+        .resources a {
+            color: #1a3e72;
+            text-decoration: none;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+        .resources ul {
+            padding-left: 20px;
+        }
+        .navigation-buttons {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    flex-wrap: wrap;         
+    gap: 20px;              
+}
+
+.navigation-buttons a {
+    padding: 10px 20px;
+    border: 2px solid #766541;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #4d422c;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation-buttons a:hover {
+    background-color: #310202;
+    color: #fcefe6;
+}
+  </style>
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+    <a href="historicalwebsite2.html"><i class='far fa-flag'></i>Top 10</a>
+    <a href="about us.html"><i class="fas fa-info-circle"></i> About Us</a>
+    <a href="recent.html" id="recent-btn"><i class="fas fa-clock"></i> Recent</a>
+    <a href="ratings.html"><i class="fas fa-star"></i> Ratings</a>
+</div> 
+    <header>
+        <h1>Lapu-Lapu</h1>
+        <p>The First Filipino Hero</p>
+        <img src="lapulapu.jpg" alt="Lapu-Lapu" class="profile-img">
+    </header>
+    
+    <div class="content">
+        <section class="section-container">
+            <h2>Historical Background</h2>
+            <img src="lapu2.jpg" alt="Lapu-Lapu Statue" class="portrait-img">
+            <p>Lapu-Lapu (fl. 1521) was a datu (chief) of Mactan in the Visayas region of the Philippines. He is best known for leading his warriors in the Battle of Mactan against Portuguese explorer Ferdinand Magellan on April 27, 1521, resulting in Magellan's death.</p>
+            
+            <p>According to historical records from Antonio Pigafetta (Magellan's chronicler), Lapu-Lapu was one of two rival chiefs in Mactan when Magellan arrived. His name was recorded as "Cilapulapu" (Si Lapulapu) in Pigafetta's account, indicating he was addressed with the honorific "Si".</p>
+            
+            <div class="fact-box">
+                <h3>Did You Know?</h3>
+                <p>The name "Lapu-Lapu" comes from the Visayan word for a type of fish (Chromileptes altivelis). Many historians believe this wasn't his personal name but rather a title or nickname referring to his skills as a fisherman or seafarer.</p>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2>The Battle of Mactan (1521)</h2>
+            <div class="image-container">
+                <img src="battle mactan.jpg" alt="Battle of Mactan">
+                <img src="dath of magellan.png" alt="Death of Magellan">
+            </div>
+            <p>Key facts about this historic battle according to primary sources:</p>
+            <ul>
+                <li><strong>Date:</strong> April 27, 1521 (local time) / April 28 (European records)</li>
+                <li><strong>Location:</strong> Shorelines of Mactan Island, Cebu</li>
+                <li><strong>Forces:</strong> ~1,500 Mactan warriors vs. 49 Spanish soldiers with native allies</li>
+                <li><strong>Weapons:</strong> Lapu-Lapu's forces used bamboo spears, fire-hardened stakes, and poisoned arrows against Spanish firearms and crossbows</li>
+                <li><strong>Outcome:</strong> Decisive Mactan victory; Magellan killed in action</li>
+            </ul>
+            
+            <div class="quote-box">
+                <p>"When they saw us, they charged down upon us with exceeding loud cries... The musketeers and crossbow-men shot from a distance for about half an hour, but uselessly..."</p>
+                <p>— Antonio Pigafetta, eyewitness account of the battle</p>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2>Leadership and Governance</h2>
+            <img src="pre colon.webp" alt="Precolonial Philippines" style="float: right; width: 40%; margin-left: 25px;">
+            <p>As a datu, Lapu-Lapu exercised both political and military leadership:</p>
+            <ul>
+                <li>Governed through the traditional "barangay" system of independent coastal settlements</li>
+                <li>Possibly had trade relations with neighboring islands and foreign merchants</li>
+                <li>Maintained a warrior class (timawa) for defense and raiding</li>
+                <li>Exercised judicial authority as chief arbitrator</li>
+            </ul>
+            
+            <p>Historical evidence suggests he resisted not just Spanish colonization but also the influence of Rajah Humabon of Cebu, who had allied with Magellan.</p>
+            
+            <div class="clear"></div>
+            
+            <div class="fact-box">
+                <h3>Precolonial Warrior Culture</h3>
+                <p>Lapu-Lapu's warriors would have been trained in:</p>
+                <ul>
+                    <li>Arnis (stick fighting)</li>
+                    <li>Kampilan (long sword) combat</li>
+                    <li>Naval warfare using balangay boats</li>
+                    <li>Ambush tactics in dense tropical terrain</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2>Historical Controversies</h2>
+            <div class="image-container">
+                <img src="artistics-lapu.png" alt="Artistic depiction">
+                <img src="mactan.webp" alt="Mactan Island today">
+            </div>
+            <p>Several aspects of Lapu-Lapu's life remain debated by historians:</p>
+            
+            <p><strong>1. Origins:</strong> Some oral traditions suggest he came from Borneo, while others claim he was native to Mactan. The 17th-century Aginid chronicle mentions he was originally from Opong (modern Cebu).</p>
+            
+            <p><strong>2. Religion:</strong> While often portrayed as resisting Christian conversion, Pigafetta's account suggests Lapu-Lapu may have already been Muslim (as "Caliph Pulaka") before Magellan arrived.</p>
+            
+            <p><strong>3. Fate:</strong> No historical records confirm what happened to Lapu-Lapu after the battle. Some legends say he returned to Borneo; others claim he died in Mactan.</p>
+        </section>
+
+        <section class="section-container">
+            <h2>Legacy and Commemoration</h2>
+            <img src="monument.png" alt="Lapu-Lapu Monument" style="float: left; width: 40%; margin-right: 25px;">
+            <p>Lapu-Lapu has become a national symbol of:</p>
+            <ul>
+                <li>Filipino resistance to colonialism</li>
+                <li>Indigenous warrior traditions</li>
+                <li>Visayan cultural identity</li>
+            </ul>
+            
+            <p>Modern honors include:</p>
+            <ul>
+                <li>The 30-foot bronze statue at the Mactan Shrine (erected 1933)</li>
+                <li>Featured on the Philippine 1-centavo coin (1967-1974)</li>
+                <li>Namesake of Lapu-Lapu City in Cebu</li>
+                <li>April 27 declared as "Lapu-Lapu Day" (Adlaw ni Lapu-Lapu in Cebu)</li>
+                <li>Recognized as the first national hero by the NHCP</li>
+            </ul>
+            
+            <div class="clear"></div>
+            
+            <div class="fact-box">
+                <h3>International Recognition</h3>
+                <p>Lapu-Lapu is honored in:</p>
+                <ul>
+                    <li>Indonesia (as a regional hero in Sulawesi)</li>
+                    <li>Malaysia (in Sabah historical narratives)</li>
+                    <li>UNESCO's Memory of the World Register (through Pigafetta's account)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-container">
+            <h2>Historical Timeline</h2>
+            <ul>
+                <li><strong>Pre-1521:</strong> Serves as datu of Mactan, possibly originating from Opong (Cebu) or Borneo</li>
+                <li><strong>March 1521:</strong> Magellan's expedition arrives in the Philippines</li>
+                <li><strong>April 14, 1521:</strong> Rajah Humabon and allies convert to Christianity</li>
+                <li><strong>April 27, 1521:</strong> Leads victorious forces in the Battle of Mactan</li>
+                <li><strong>Post-1521:</strong> Fate unknown; possibly continues to rule Mactan or returns to Borneo</li>
+                <li><strong>1565:</strong> Spanish successfully colonize Cebu under Legazpi, 44 years after Lapu-Lapu's victory</li>
+            </ul>
+        </section>
+
+        <section class="section-container">
+            <h2>Academic Perspectives</h2>
+            <p>According to the National Historical Commission of the Philippines (NHCP):</p>
+            <ul>
+                <li>Lapu-Lapu represents precolonial Filipino sovereignty</li>
+                <li>The Battle of Mactan delayed Spanish colonization by decades</li>
+                <li>His leadership demonstrates sophisticated indigenous governance</li>
+            </ul>
+            <div class="resources">
+              <section class="section-container">
+                  <h2>Resources on Lapu-Lapu</h2>
+                  <p>For those interested in learning more about Lapu-Lapu, here are valuable resources:</p>
+                  
+                  <h3>1. Historical Accounts</h3>
+                  <ul class="resources-list">
+                      <li><a href="https://www.britannica.com/biography/Lapu-Lapu" target="_blank">Antonio Pigafetta's Chronicles</a></li>
+                      <li><a href="https://www.britannica.com/biography/Lapu-Lapu" target="_blank">Spanish Colonial Records</a></li>
+                  </ul>
+                  
+                  <h3>2. Books & Literature</h3>
+                  <ul class="resources-list">
+                      <li><a href="https://www.britannica.com/biography/Lapu-Lapu" target="_blank">Lapu-Lapu: The Conqueror of Magellan by Vicente Gullas</a></li>
+                      <li><a href="https://www.britannica.com/biography/Lapu-Lapu" target="_blank">The Mactan Revolution by Resil Mojares</a></li>
+                      <li><a href="https://www.britannica.com/biography/Lapu-Lapu" target="_blank">Philippine History and Government by Sonia Zaide</a></li>
+                  </ul>
+                  
+                  <h3>3. Online Resources</h3>
+                  <ul class="resources-list">
+                      <li><a href="https://nhcp.gov.ph" target="_blank">National Historical Commission of the Philippines (NHCP)</a></li>
+                      <li><a href="https://filipiknow.net/lapu-lapu" target="_blank">FilipiKnow</a></li>
+                      <li><a href="https://www.britannica.com/biography/Lapu-Lapu" target="_blank">Encyclopedia Britannica</a></li>
+                  </ul>
+                  
+                  <h3>4. Museums & Historical Sites</h3>
+                  <ul class="resources-list">
+                      <li><a href="https://www.britannica.com/biography/Lapu-Lapu" target="_blank">Lapu-Lapu Shrine (Mactan, Cebu)</a></li>
+                      <li><a href="https://www.britannica.com/biography/Lapu-Lapu" target="_blank">National Museum of the Philippines</a></li>
+                  </ul>
+              </section>
+          </div>
+            <div class="quote-box">
+                <p>"Lapu-Lapu's victory proved that our ancestors were not passive recipients of foreign influence but active defenders of their way of life."</p>
+                <p>— Dr. Rene Escalante, NHCP Chairman</p>
+            </div>
+        </section>
+    </div>
+    <div class="navigation-buttons">
+      <a href="silang.html">&larr; Previous</a>
+      <a href="kudarat.html">Next &rarr;</a>
+    </div>
+    
+    <footer>
+        <p>Lapu-Lapu (fl. 1521) | Datu of Mactan | Victor of the Battle of Mactan | Symbol of Philippine Resistance</p>
+    </footer>
+</body>
+</html>
+

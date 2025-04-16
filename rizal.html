@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>José Rizal: The National Hero of the Philippines</title>
+    <style>
+         body {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #5f0707;
+        }
+        .navbar {
+            background-color: #4a3525;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar a {
+            color: #fce8b2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #f1d599;
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4b1515;
+            color: white;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            margin: 0;
+        }
+        .profile-img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 20px;
+            object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 4px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            font-size: 1.8em;
+            color: #5f0606;
+            border-bottom: 2px solid #4b1515;
+            padding-bottom: 10px;
+        }
+        .bio-container,
+        .timeline-container,
+        .works-container,
+        .legacy-container {
+            margin-bottom: 40px;
+        }
+        .bio-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .bio-container .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .bio-container .image-container img {
+            width: 45%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .bio-container .image-container img:hover {
+            transform: scale(1.03);
+        }
+        .bio-container p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            color: #473b3b;
+            text-align: justify;
+        }
+        .bio-container .portrait-img {
+            width: 40%;
+            float: left;
+            margin-right: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+        .bio-container .clear {
+            clear: both;
+        }
+        .timeline-container {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #4b1515;
+        }
+        .timeline-container ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+        .timeline-container li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline-container li:before {
+            content: "•";
+            color: #4b1515;
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        .works-container .work-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .works-container .work-item img {
+            width: 120px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .works-container .work-info h3 {
+            margin: 0 0 10px 0;
+            color: #4b1515;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1a0808;
+            color: white;
+            width: 100%;
+            font-size: 0.9em;
+        }
+        .quote {
+            font-style: italic;
+            background: #f5e8e8;
+            padding: 15px;
+            border-left: 4px solid #4b1515;
+            margin: 20px 0;
+        }
+        .fact-box {
+            background: #e8f1f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .fact-box h3 {
+            margin-top: 0;
+            color: #1a3e72;
+        }
+        .resources {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            border-left: 4px solid #4b1515;
+        }
+        .resources h3 {
+            margin-top: 0;
+            color: #4b1515;
+        }
+        .resources a {
+            color: #1a3e72;
+            text-decoration: none;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+        .resources ul {
+            padding-left: 20px;
+        }
+        .navigation-buttons {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .navigation-buttons a {
+      padding: 10px 20px;
+      border: 2px solid #766541;
+      border-radius: 8px;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #4d422c;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navigation-buttons a:hover {
+      background-color: #310202;
+      color: #fcefe6;
+    }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+        <a href="historicalwebsite2.html"><i class='far fa-flag'></i>Top 10</a>
+        <a href="about us.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="recent.html" id="recent-btn"><i class="fas fa-clock"></i> Recent</a>
+        <a href="ratings.html"><i class="fas fa-star"></i> Ratings</a>
+    </div> 
+    <header>
+        <h1>José Rizal</h1>
+        <img src="rizal1.jpeg" alt="José Rizal" class="profile-img">
+        <p>The National Hero of the Philippines</p>
+    </header>
+    
+    <div class="content">
+        <section class="bio-container">
+            <h2>Biography</h2>
+            <img src="rizal2.webp" alt="José Rizal Youth" class="portrait-img">
+            <p>José Protasio Rizal Mercado y Alonzo Realonda (June 19, 1861 – December 30, 1896) was a Filipino nationalist, novelist, and key figure in the Philippine Revolution. Born in Calamba, Laguna, Rizal was the seventh of eleven children in a prosperous family. His mother, Teodora Alonso, was his first teacher and instilled in him a love for learning.</p>
+            
+            <p>At age 9, Rizal was sent to Biñan for schooling before entering Ateneo Municipal de Manila in 1872, where he excelled academically. He later enrolled at the University of Santo Tomas to study medicine but faced discrimination from Spanish friars. This prompted him to continue his studies in Europe in 1882.</p>
+            
+            <div class="quote">
+                "The youth is the hope of our future." — José Rizal
+            </div>
+            
+            <div class="fact-box">
+                <h3>Did You Know?</h3>
+                <p>Rizal was a polymath who mastered 22 languages, including Latin, Greek, German, French, and Chinese. He was also an accomplished artist, sculptor, and fencer.</p>
+            </div>
+        </section>
+
+        <section class="bio-container">
+            <h2>Education & Travels</h2>
+            <p>Rizal's journey across Europe and Asia shaped his revolutionary ideas:</p>
+            <ul>
+                <li><strong>Madrid (1882-1885):</strong> Studied medicine at Universidad Central de Madrid, earning degrees in Philosophy and Letters and Licentiate in Medicine.</li>
+                <li><strong>Paris (1885-1886):</strong> Specialized in ophthalmology under Dr. Louis de Wecker.</li>
+                <li><strong>Heidelberg (1886):</strong> Studied under Dr. Otto Becker while working on his novel <em>Noli Me Tangere</em>.</li>
+                <li><strong>Asia (1888):</strong> Traveled through Japan, the United States, and England, where he annotated Antonio de Morga's <em>Sucesos de las Islas Filipinas</em>.</li>
+            </ul>
+            
+            <div class="image-container">
+                <img src="rizal3.avif" alt="Rizal in Europe">
+                <img src="rizal4.jpg" alt="Rizal's Travels">
+            </div>
+        </section>
+
+        <section class="works-container">
+            <h2>Famous Works</h2>
+            <div class="work-item">
+                <img src="nolimetangere.jpg" alt="Noli Me Tangere">
+                <div class="work-info">
+                    <h3>Noli Me Tangere (1887)</h3>
+                    <p>Rizal's first novel exposed the abuses of Spanish friars and colonial government through the story of Crisostomo Ibarra. Written in Berlin, it was published with the help of friend Maximo Viola.</p>
+                </div>
+            </div>
+            
+            <div class="work-item">
+                <img src="elfeli.webp" alt="El Filibusterismo">
+                <div class="work-info">
+                    <h3>El Filibusterismo (1891)</h3>
+                    <p>The darker sequel to <em>Noli</em>, published in Ghent, Belgium. It portrayed a more radical approach to reform through the character of Simoun.</p>
+                </div>
+            </div>
+            
+            <div class="fact-box">
+                <h3>Other Notable Works:</h3>
+                <ul>
+                    <li><strong>Mi Último Adiós</strong> (1896): His final poem, written before execution</li>
+                    <li><strong>To the Filipino Youth</strong> (1879): Award-winning poem</li>
+                    <li><strong>The Philippines a Century Hence</strong> (1889): Political essay predicting colonialism's end</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="bio-container">
+            <h2>Exile in Dapitan (1892-1896)</h2>
+            <img src="dapitan.jpg" alt="Rizal in Dapitan" style="float: right; width: 40%; margin-left: 20px;">
+            <p>After returning to the Philippines in 1892, Rizal was exiled to Dapitan, Zamboanga for four years. During this period, he:</p>
+            <ul>
+                <li>Established a school and hospital for the community</li>
+                <li>Developed a water system using clay pipes</li>
+                <li>Engaged in farming, fishing, and business ventures</li>
+                <li>Conducted scientific studies (discovered new species like the <em>Draco rizali</em> flying lizard)</li>
+                <li>Met Josephine Bracken, his companion until death</li>
+            </ul>
+            <div class="clear"></div>
+        </section>
+
+        <section class="bio-container">
+            <h2>Martyrdom</h2>
+            <img src="rizalmatrydom.jpg" alt="Rizal Martyrdom" style="width: 100%; margin-bottom: 20px;">
+            <p>Despite having no direct involvement with the Katipunan revolution, Rizal was arrested in 1896 while en route to Cuba as a volunteer doctor. He was:</p>
+            <ul>
+                <li>Imprisoned in Fort Santiago, Manila</li>
+                <li>Tried by a military court for rebellion, sedition, and conspiracy</li>
+                <li>Found guilty and sentenced to death by firing squad</li>
+            </ul>
+            
+            <h3>The Final Hours</h3>
+            <p>On December 29, 1896, Rizal:</p>
+            <ul>
+                <li>Wrote his masterpiece <em>Mi Último Adiós</em>, hidden in an alcohol lamp</li>
+                <li>Secretly married Josephine Bracken</li>
+                <li>Composed letters to family and his best friend Ferdinand Blumentritt</li>
+            </ul>
+            
+            <img src="luneta.jpg" alt="Luneta Park Execution" style="width: 100%; margin: 20px 0;">
+            <p>At dawn on December 30, 1896, Rizal was executed at Bagumbayan (now Rizal Park). His last request to face the firing squad was denied, but as he fell from the bullets, he twisted his body to die facing the sun - a final act of defiance.</p>
+        </section>
+
+        <section class="timeline-container">
+            <h2>Timeline of Rizal's Life</h2>
+            <ul>
+                <li><strong>June 19, 1861:</strong> Born in Calamba, Laguna</li>
+                <li><strong>1872:</strong> Witnessed Gomburza execution; entered Ateneo</li>
+                <li><strong>1882:</strong> Left for Spain to continue studies</li>
+                <li><strong>1887:</strong> Published <em>Noli Me Tangere</em> in Berlin</li>
+                <li><strong>1891:</strong> Published <em>El Filibusterismo</em> in Ghent</li>
+                <li><strong>1892:</strong> Founded La Liga Filipina; exiled to Dapitan</li>
+                <li><strong>December 30, 1896:</strong> Executed at age 35 in Manila</li>
+                <li><strong>1912:</strong> Declared National Hero by the U.S. colonial government</li>
+            </ul>
+        </section>
+
+        <section class="legacy-container">
+            <h2>Legacy</h2>
+            <p>José Rizal's impact continues today:</p>
+            <ul>
+                <li><strong>National Hero:</strong> Officially recognized as the Philippines' greatest hero</li>
+                <li><strong>Rizal Day:</strong> December 30 is a national holiday</li>
+                <li><strong>Monuments:</strong> Rizal Park, Rizal Shrines in Calamba and Dapitan</li>
+                <li><strong>Currency:</strong> Featured on Philippine peso coins and bills</li>
+                <li><strong>Education:</strong> Rizal's works are mandatory reading in schools</li>
+            </ul>
+            
+            <div class="quote">
+                "I die without seeing the dawn brighten over my native land. You who have it to see, welcome it - and forget not those who have fallen during the night." — Last lines of <em>Noli Me Tangere</em>
+            </div>
+            <div class="resources">
+                <h3>Additional Resources:</h3>
+                <ul>
+                    <li><a href="https://www.britannica.com/biography/Jose-Rizal" target="_blank">Britannica - José Rizal Biography</a></li>
+                    <li><a href="https://www.nationalheroesday.gov.ph/jose-rizal/" target="_blank">National Heroes Day - José Rizal Profile</a></li>
+                    <li><a href="https://rizal.lib.admu.edu.ph/" target="_blank">Rizal Library - Ateneo de Manila University</a></li>
+                    <li><a href="https://www.officialgazette.gov.ph/featured/rizal/" target="_blank">Official Gazette of the Philippines - Rizal Collection</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div class="navigation-buttons">
+        <a href="bonifacio.html">Next &rarr;</a>
+      </div>
+    <footer>
+        <p>José Rizal (1861-1896) | Philippine National Hero | "The pen is mightier than the sword"</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Sultan Kudarat: The Great Muslim Warrior of Mindanao</title>
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #5f0707;
+        }
+        .navbar {
+            background-color: #4a3728;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar a {
+            color: #fce8b2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #f3d89f;
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+        header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(rgba(75, 21, 21, 0.8), rgba(75, 21, 21, 0.9)), url('mindanao-bg.jpg');
+            background-size: cover;
+            color: white;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        header p.subtitle {
+            font-style: italic;
+            font-size: 1.2em;
+            margin-top: 5px;
+            color: #e8f1f8;
+            text-align: center;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 20px auto;
+            object-fit: cover;
+            border: 5px solid #fce8b2;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .content {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            font-size: 2em;
+            color: #4b1515;
+            border-bottom: 3px solid #4b1515;
+            padding-bottom: 10px;
+        }
+        .section-container {
+            margin-bottom: 50px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            width: 48%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #333;
+            text-align: justify;
+        }
+        .portrait-img {
+            width: 40%;
+            float: left;
+            margin: 0 25px 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        }
+        .clear {
+            clear: both;
+        }
+        .timeline-container {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #4b1515;
+        }
+        .timeline-container ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+        .timeline-container li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            line-height: 1.6;
+        }
+        .timeline-container li:before {
+            content: "•";
+            color: #4b1515;
+            font-size: 1.8em;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        .quote-box {
+            background-color: #f5e8e8;
+            padding: 20px;
+            border-left: 5px solid #4b1515;
+            margin: 25px 0;
+            font-style: italic;
+        }
+        .fact-box {
+            background-color: #e8f1f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .fact-box h3 {
+            color: #1a3e72;
+            margin-top: 0;
+            border-bottom: 2px solid #1a3e72;
+            padding-bottom: 5px;
+        }
+        footer {
+          padding: 20px;
+          background-color: #1a0808;
+          color: white;
+          width: 100%;
+          margin-top: 50px;
+      }
+      footer p{
+        color: #e8f1f8;
+        text-align: center;
+      }
+
+        .resources {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            border-left: 4px solid #4b1515;
+        }
+        .resources h3 {
+            margin-top: 0;
+            color: #4b1515;
+        }
+        .resources a {
+            color: #1a3e72;
+            text-decoration: none;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+        .resources ul {
+            padding-left: 20px;
+        }
+        @media (max-width: 768px) {
+            .portrait-img {
+                width: 100%;
+                float: none;
+                margin: 0 0 20px 0;
+            }
+            .image-container {
+                flex-direction: column;
+            }
+            .image-container img {
+                width: 100%;
+            }
+        }
+        .navigation-buttons {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    flex-wrap: wrap;         
+    gap: 20px;              
+}
+
+.navigation-buttons a {
+    padding: 10px 20px;
+    border: 2px solid #766541;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #4d422c;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation-buttons a:hover {
+    background-color: #310202;
+    color: #fcefe6;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+        <a href="historicalwebsite2.html"><i class='far fa-flag'></i>Top 10</a>
+        <a href="about us.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="recent.html" id="recent-btn"><i class="fas fa-clock"></i> Recent</a>
+        <a href="ratings.html"><i class="fas fa-star"></i> Ratings</a>
+    </div>
+
+    <header>
+        <h1>Sultan Muhammad Dipatuan Kudarat</h1>
+        <p class="subtitle">The Great Muslim Warrior of Mindanao</p>
+        <img src="sultan1.jpg" alt="Sultan Kudarat" class="profile-img">
+    </header>
+
+    <div class="content">
+        <section class="section-container">
+            <h2>Biography</h2>
+            <img src="sultan.jpg" alt="Sultan Kudarat" class="portrait-img">
+            <p>Sultan Muhammad Dipatuan Kudarat (1581–1671), commonly known as Sultan Kudarat, was the 7th Sultan of Maguindanao and one of the most powerful rulers in Philippine history. He reigned from 1619 to 1671, successfully resisting Spanish colonization attempts in Mindanao for over five decades.</p>
+            
+            <p>Born to Sultan Kapitan Laut Buisan, Kudarat inherited a kingdom that controlled much of Mindanao and parts of Borneo. He consolidated his power through strategic marriages and military alliances, creating a formidable Islamic state that challenged Spanish colonial ambitions.</p>
+            
+            <div class="quote-box">
+                <p>"Better to die a free man than live as a slave under foreign rule."</p>
+                <p>— Sultan Kudarat</p>
+            </div>
+            
+            <div class="fact-box">
+                <h3>Did You Know?</h3>
+                <p>The name "Kudarat" comes from the Arabic "Qudrat" meaning "power" or "divine power". The modern Philippine province of Sultan Kudarat is named in his honor.</p>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2>Military Campaigns Against Spain</h2>
+            <div class="image-container">
+                <img src="sultan2.jpg" alt="Sultan Kudarat in battle">
+                <img src="moro.jpg" alt="Moro warriors">
+            </div>
+            <p>Sultan Kudarat's military achievements include:</p>
+            <ul>
+                <li>Defeating Spanish forces in the 1628 Battle of Lamitan</li>
+                <li>Destroying the Spanish fort at Zamboanga in 1630</li>
+                <li>Leading the successful defense of Lamitan in 1637 against Governor-General Hurtado de Corcuera</li>
+                <li>Maintaining Maguindanao's independence despite repeated Spanish expeditions</li>
+            </ul>
+            
+            <p>His forces used innovative naval tactics with their fast-moving garay warships and employed guerrilla warfare in Mindanao's dense jungles. Kudarat also formed alliances with the Sulu Sultanate and Buayan datus to present a united front against the Spanish.</p>
+        </section>
+
+        <section class="section-container">
+            <h2>Diplomacy and Governance</h2>
+            <img src="sulta3.jpg" alt="Sultan's court" style="float: right; width: 40%; margin-left: 25px;">
+            <p>Beyond military prowess, Sultan Kudarat was a skilled statesman:</p>
+            <ul>
+                <li>Established trade relations with Dutch and English merchants</li>
+                <li>Implemented a centralized administration system</li>
+                <li>Promoted Islamic education throughout his realm</li>
+                <li>Maintained a balance of power with neighboring sultanates</li>
+            </ul>
+            
+            <p>His reign saw the flourishing of Maguindanao as a regional power, with its influence extending to present-day Malaysia and Indonesia. The sultanate became a center of Islamic learning and commerce in Southeast Asia.</p>
+            
+            <div class="clear"></div>
+            
+            <div class="fact-box">
+                <h3>Islamic Leadership</h3>
+                <p>As a Muslim ruler, Sultan Kudarat:</p>
+                <ul>
+                    <li>Built mosques and Islamic schools</li>
+                    <li>Appointed qadis (Islamic judges) to administer justice</li>
+                    <li>Promoted the spread of Islam in Mindanao</li>
+                    <li>Resisted Spanish attempts at Christianization</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2>Later Years and Succession</h2>
+            <div class="image-container">
+                <img src="sd1.jpg" alt="Elder Sultan Kudarat">
+                <img src="sdtombs.jpg" alt="Sultan Kudarat's tomb">
+            </div>
+            <p>In his later years, Sultan Kudarat:</p>
+            <ul>
+                <li>Successfully negotiated peace treaties with Spain while maintaining sovereignty</li>
+                <li>Prepared his son Dundang Tidulay as successor</li>
+                <li>Died in 1671 at about 90 years old - an extraordinary age for his time</li>
+                <li>Was buried in Simuay, Sultan Kudarat (now in Maguindanao del Norte)</li>
+            </ul>
+            
+            <p>His death marked the beginning of the decline of the Maguindanao Sultanate, though his legacy continued to inspire Muslim resistance against colonial powers.</p>
+        </section>
+
+        <section class="section-container">
+            <h2>Legacy and Honors</h2>
+            <img src="monument sultan.jpg" alt="Sultan Kudarat monument" style="float: left; width: 40%; margin-right: 25px;">
+            <p>Sultan Kudarat's enduring legacy includes:</p>
+            <ul>
+                <li>The province of Sultan Kudarat named in his honor</li>
+                <li>Featured on the Philippine 1-peso coin (1972-1974)</li>
+                <li>Numerous schools, streets, and plazas bearing his name</li>
+                <li>Recognized as a National Hero by the Philippine government</li>
+                <li>Symbol of Muslim Filipino identity and resistance</li>
+            </ul>
+            
+            <div class="clear"></div>
+            
+            <div class="quote-box">
+                <p>"Sultan Kudarat stands as a towering figure in our history - a warrior, statesman, and defender of our Islamic heritage."</p>
+                <p>— National Historical Commission of the Philippines</p>
+            </div>
+        </section>
+
+        <section class="timeline-container">
+            <h2>Timeline of Sultan Kudarat's Life</h2>
+            <ul>
+                <li><strong>1581:</strong> Born in Maguindanao, son of Sultan Kapitan Laut Buisan</li>
+                <li><strong>1619:</strong> Ascended to the throne as 7th Sultan of Maguindanao</li>
+                <li><strong>1628:</strong> Defeated Spanish forces at Lamitan</li>
+                <li><strong>1630:</strong> Destroyed Spanish fort at Zamboanga</li>
+                <li><strong>1637:</strong> Successfully defended Lamitan against Governor-General Corcuera</li>
+                <li><strong>1645:</strong> Negotiated favorable peace treaty with Spain</li>
+                <li><strong>1671:</strong> Died in Simuay at about 90 years old</li>
+                <li><strong>1973:</strong> Province of Sultan Kudarat created in his honor</li>
+            </ul>
+        </section>
+
+        <section class="section-container">
+            <h2>Sultan Kudarat in Popular Culture</h2>
+            <div class="image-container">
+                <img src="sultankudarat.jpg" alt="Sultan Kudarat book">
+            </div>
+            <p>The sultan's life has been depicted in:</p>
+            <ul>
+                <li>"Angkan ni Kudarat" - GMA-7 historical drama series</li>
+                <li>Various Moro folk songs and epic poems</li>
+                <li>Contemporary Bangsamoro literature</li>
+            </ul>
+            
+            <div class="resources">
+                <h3>Academic Resources</h3>
+                <ul>
+                    <li><a href="https://nhcp.gov.ph/sultan-kudarat/" target="_blank">NHCP Official Profile</a></li>
+                    <li><a href="https://www.asj.upd.edu.ph/" target="_blank">Asian Studies Journal Articles</a></li>
+                    <li><a href="https://www.britannica.com/biography/Sultan-Kudarat" target="_blank">Encyclopedia Britannica Entry</a></li>
+                    <li><a href="https://www.gutenberg.org/files/38269/38269-h/38269-h.htm" target="_blank">Historical Documents on Maguindanao</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div class="navigation-buttons">
+        <a href="lapu.html">&larr; Previous</a>
+      </div>
+    <footer>
+        <p>Sultan Muhammad Dipatuan Kudarat (1581–1671) | Defender of Islam in Mindanao | National Hero of the Philippines</p>
+    </footer>
+</body>
+</html>
+

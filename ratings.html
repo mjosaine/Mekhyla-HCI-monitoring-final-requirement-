@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Rating</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Ensure the page takes full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Flexbox layout for the body */
+        body {
+            background: linear-gradient(135deg, #f7f4f3, #fffefe);
+            color: #eae5dc;
+            font-family: 'Cormorant Garamond', serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .navbar {
+            background-color: #4a3728;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: start;
+        }
+        .navbar a {
+            color: #fce8b2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #f3d89f;
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            color: #39260e;
+            margin-top: 30px;
+        }
+
+        .ratings-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .rating-item {
+            background-color: #551706;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .rating-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .stars i {
+            font-size: 1.5rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .stars i.rated {
+            color: gold;
+        }
+
+        .rating-display {
+            margin-top: 5px;
+            font-style: italic;
+            color: #f9d9b7;
+        }
+
+        .submit-button {
+            display: block;
+            margin: 30px auto 0;
+            background-color: #4f1e11;
+            color: rgb(255, 250, 250);
+            font-size: 1.2rem;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #f7df03;
+        }
+
+        .thank-you-message {
+            text-align: center;
+            color: rgb(250, 237, 5);
+            font-size: 1.5rem;
+            display: none;
+        }
+
+        footer {
+            background-color: #3c1e1e;
+            color: #f4e3c1;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 3px solid #a87b4d;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+        <a href="top10.html"><i class='far fa-flag'></i>Top 10</a>
+        <a href="about us.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="recent.html"><i class="fas fa-clock"></i> Recent</a>
+        <a href="ratings.html"><i class="fas fa-star"></i> Ratings</a>
+    </div>
+
+    <h1>Rate Our Website</h1>
+
+    <div class="ratings-container">
+        <div class="rating-item" data-hero="Website">
+            <div class="rating-item-header">
+                <span class="hero-name">Our Website</span>
+                <div class="stars"></div>
+            </div>
+            <div class="rating-display"></div>
+        </div>
+    </div>
+
+    <button class="submit-button">Submit Ratings</button>
+
+    <div class="thank-you-message" id="thank-you-message">Thank you for rating!</div>
+
+    <footer>
+        &copy; 2025 Philippine Heroes Archive. All rights reserved.
+    </footer>
+
+    <script>
+        const ratingItem = document.querySelector('.rating-item');
+        const starsDiv = ratingItem.querySelector('.stars');
+        const ratingDisplay = ratingItem.querySelector('.rating-display');
+
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement('i');
+            star.classList.add('fas', 'fa-star');
+            star.dataset.value = i;
+            starsDiv.appendChild(star);
+        }
+
+        const savedRating = localStorage.getItem("Website");
+        if (savedRating) {
+            highlightStars(starsDiv, parseInt(savedRating));
+            ratingDisplay.textContent = `You rated: ${savedRating}/5`;
+        }
+
+        starsDiv.querySelectorAll('i').forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.dataset.value);
+                localStorage.setItem("Website", rating);
+                highlightStars(starsDiv, rating);
+                ratingDisplay.textContent = `You rated: ${rating}/5`;
+            });
+        });
+
+        function highlightStars(starsDiv, rating) {
+            starsDiv.querySelectorAll('i').forEach(star => {
+                star.classList.toggle('rated', parseInt(star.dataset.value) <= rating);
+            });
+        }
+
+        document.querySelector('.submit-button').addEventListener('click', () => {
+            const thankYouMessage = document.getElementById('thank-you-message');
+            thankYouMessage.style.display = 'block';
+
+            setTimeout(() => {
+                thankYouMessage.style.display = 'none';
+            }, 3000); // Hide the message after 3 seconds
+
+            alert('Thank you for rating!');
+        });
+    </script>
+</body>
+</html>
+
+

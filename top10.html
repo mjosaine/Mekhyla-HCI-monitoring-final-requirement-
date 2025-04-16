@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Philippine Heroes</title>
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #5c1103, #7e4c4c);
+            background-size: cover;
+            color: #3b2b1b;
+        }
+
+        .navbar {
+            background-color: #3c1e1e;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar a {
+            color: #f8d6b3;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: #f3d89f;
+            text-decoration: underline;
+        }
+
+        .phi-container img {
+            width: 100%;
+            height: 70vh;
+            object-fit: cover;
+            -webkit-mask-image: linear-gradient(to bottom, #ab4038 60%, rgba(171, 64, 56, 0));
+            mask-image: linear-gradient(to bottom, #ab4038 60%, rgba(171, 64, 56, 0));
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: #f8d6b3;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #fff;
+            background-color: #610606;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .intro-section {
+    background: rgba(76, 21, 21, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.intro-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    color: #ffddb0;
+    font-family: 'Cinzel', serif;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+
+.intro-section p {
+    line-height: 1.8;
+    font-size: 1.2rem;
+    color: #f4e3c1;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.dropcap {
+    float: left;
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-right: 10px;
+    font-family: 'Cinzel', serif;
+    color: #f7c58c;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background-color: #3c2620;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .hero:hover {
+            transform: scale(1.05);
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s;
+        }
+
+        .hero-container:hover .hero:not(:hover) img {
+            filter: blur(3px);
+        }
+
+        .hero:hover img {
+            filter: none;
+        }
+
+        .hero-name {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(30, 15, 10, 0.7);
+            color: #f8e8d0;
+            padding: 10px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        footer {
+            background-color: #3c1e1e;
+            color: #f4e3c1;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-family: 'Cormorant Garamond', serif;
+            border-top: 3px solid #a87b4d;
+        }
+
+        hr {
+            border: none;
+            border-top: 5px double #a87b4d;
+            width: 60%;
+            margin: 40px auto;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media only screen and (max-width: 600px) {
+  .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 6;}
+  .item3 {grid-area: 3 / span 6;}
+  .item4 {grid-area: 4 / span 6;}
+  .item5 {grid-area: 5 / span 6;}
+}
+
+@media only screen and (min-width: 600px) {
+  .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 1;}
+  .item3 {grid-area: 2 / span 4;}
+  .item4 {grid-area: 3 / span 6;}
+  .item5 {grid-area: 4 / span 6;}
+}
+
+@media only screen and (min-width: 768px) {
+  .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 1;}
+  .item3 {grid-area: 2 / span 4;}
+  .item4 {grid-area: 2 / span 1;}
+  .item5 {grid-area: 3 / span 6;}
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+       
+        <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+        <a href="historicalwebsite2.html"><i class='far fa-flag'></i>Top 10</a>
+        <a href="about us.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="recent.html" id="recent-btn"><i class="fas fa-clock"></i> Recent</a>
+        <a href="ratings.html"><i class="fas fa-star"></i> Ratings</a>
+    </div>
+
+    <div class="container">
+        <div class="phi-container">
+            <img src="philipine flag.png" alt="Philippine Flag">
+        </div>
+    </div>
+   
+
+
+    <h1>Top 10 Historical Figures of the Philippines</h1>
+
+    
+    
+    <article class="w3-container intro-section fade-in">
+        <h2>Unfolding the Pages of Heroism</h2>
+        <p><span class="dropcap">T</span>he story of the Philippines is etched with the blood, sweat, and dreams of its people. From ancient warriors to enlightened thinkers, each era was marked by unbreakable spirits who dared to challenge tyranny and oppression. With hearts burning for justice and minds unshackled by fear, they planted the seeds of freedom that we harvest today.</p>
+    
+        <p>During centuries of colonial rule, the nation’s soul was forged through revolutions, resistance, and relentless hope. Brave Filipinos—men and women alike—rose not for glory, but for the promise of a better tomorrow. Through written words, swords, and sacrifices, they became the heartbeat of a nation longing to breathe free.</p>
+    
+        <p>From the eloquent pen of <strong>José Rizal</strong> to the fearless sword of <strong>Andrés Bonifacio</strong>, and the brilliant mind of <strong>Apolinario Mabini</strong> to the unwavering valor of <strong>Gregorio del Pilar</strong>, their stories remind us of who we are—and what we must protect. They lit the path that now guides every Filipino to honor, courage, and patriotism.</p>
+    
+        <p>Let us revisit and celebrate the lives of our top 10 national heroes—icons whose legacy continues to inspire a nation built on hope, justice, and pride.</p>
+    </article>
+    
+    <div class="hero-container">
+        <div class="hero fade-in"><a href="rizal.html"><img src="rizal1.jpg" alt="Jose Rizal"><div class="hero-name">José Rizal</div></a></div>
+        <div class="hero fade-in"><a href="bonifacio.html"><img src="bonifac1.jpg" alt="Andrés Bonifacio"><div class="hero-name">Andrés Bonifacio</div></a></div>
+        <div class="hero fade-in"><a href="aguinaldo.html"><img src="Aguinaldo 3.jpg" alt="Emilio Aguinaldo"><div class="hero-name">Emilio Aguinaldo</div></a></div>
+        <div class="hero fade-in"><a href="mabini.html"><img src="mabini-1.jpg" alt="Apolinario Mabini"><div class="hero-name">Apolinario Mabini</div></a></div>
+        <div class="hero fade-in"><a href="pilar.html"><img src="pilar1.jpg" alt="Marcelo H. del Pilar"><div class="hero-name">Marcelo del Pilar</div></a></div>
+        <div class="hero fade-in"><a href="luna.html"><img src="luna1.jpg" alt="Antonio Luna"><div class="hero-name">Antonio Luna</div></a></div>
+        <div class="hero fade-in"><a href="aquino.html"><img src="aquino1.jpg" alt="Melchora Aquino"><div class="hero-name">Melchora Aquino</div></a></div>
+        <div class="hero fade-in"><a href="silang.html"><img src="silang1.jpg" alt="Gabriela Silang"><div class="hero-name">Gabriela Silang</div></a></div>
+        <div class="hero fade-in"><a href="lapu.html"><img src="lapu1.jpg" alt="Lapu-Lapu"><div class="hero-name">Lapu-Lapu</div></a></div>
+        <div class="hero fade-in"><a href="kudarat.html"><img src="kudarat1.jpg" alt="Sultan Kudarat"><div class="hero-name">Sultan Kudarat</div></a></div>
+    </div>
+   
+    <footer>
+        &copy; 2025 Philippine Heroes Archive. All rights reserved.
+    </footer>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        faders.forEach(fader => observer.observe(fader));
+
+        // Add the recent hero page to localStorage when viewing a hero biography page
+        document.querySelectorAll('.hero a').forEach(heroLink => {
+            heroLink.addEventListener('click', function () {
+                let recentHeroes = JSON.parse(localStorage.getItem('recentHeroes')) || [];
+
+                // Remove if already there
+                recentHeroes = recentHeroes.filter(h => h !== this.getAttribute('href'));
+
+                // Add new one at the end
+                recentHeroes.push(this.getAttribute('href'));
+
+                // Save the last 5 viewed
+                localStorage.setItem('recentHeroes', JSON.stringify(recentHeroes.slice(-5)));
+            });
+        });
+    </script>
+</body>
+</html>

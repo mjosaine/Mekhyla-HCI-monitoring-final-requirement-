@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Antonio Luna: The Fiery General</title>
+  <style>
+     body {
+      font-family: 'Merriweather', serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      color: #5f0707;
+    }
+    .navbar {
+            background-color: #4a3728;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar a {
+            color: #fce8b2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #f3d89f;
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #4b1515;
+      color: white;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin: 0;
+    }
+    .profile-img {
+      width: 150px;
+      height: auto;
+      border-radius: 50%;
+      margin-top: 20px;
+      object-fit: cover;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 4px solid #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .content h2 {
+      font-size: 1.8em;
+      color: #5f0606;
+      border-bottom: 2px solid #4b1515;
+      padding-bottom: 10px;
+    }
+    .bio-container,
+    .timeline-container,
+    .works-container,
+    .legacy-container {
+      margin-bottom: 40px;
+    }
+    .bio-container img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .bio-container .image-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .bio-container .image-container img {
+      width: 45%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .bio-container .image-container img:hover {
+      transform: scale(1.03);
+    }
+    .bio-container .image-container img:hover {
+      transform: scale(1.03);
+    }
+    .bio-container p {
+      font-size: 1.1em;
+      line-height: 1.6em;
+      color: #473b3b;
+      text-align: justify;
+    }
+    .bio-container .portrait-img {
+      width: 40%;
+      float: left;
+      margin-right: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+    .bio-container .clear {
+      clear: both;
+    }
+    .timeline-container {
+      background-color: #f9f9f9;
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 5px solid #4b1515;
+    }
+    .timeline-container ul {
+      padding-left: 20px;
+      list-style-type: none;
+    }
+    .timeline-container li {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 30px;
+    }
+    .timeline-container li:before {
+      content: "•";
+      color: #4b1515;
+      font-size: 1.5em;
+      position: absolute;
+      left: 0;
+      top: -5px;
+    }
+    .works-container .work-item {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .works-container .work-item img {
+      width: 120px;
+      height: auto;
+      border-radius: 5px;
+      margin-right: 20px;
+    }
+    .works-container .work-info h3 {
+      margin: 0 0 10px 0;
+      color: #4b1515;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #1a0808;
+      color: white;
+      width: 100%;
+      font-size: 0.9em;
+    }
+    .quote {
+      font-style: italic;
+      background: #f5e8e8;
+      padding: 15px;
+      border-left: 4px solid #4b1515;
+      margin: 20px 0;
+    }
+    .fact-box {
+      background: #e8f1f8;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .fact-box h3 {
+      margin-top: 0;
+      color: #1a3e72;
+    }
+    .resources {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            border-left: 4px solid #4b1515;
+        }
+        .resources h3 {
+            margin-top: 0;
+            color: #4b1515;
+        }
+        .resources a {
+            color: #1a3e72;
+            text-decoration: none;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+        .resources ul {
+            padding-left: 20px;
+        }
+        .navigation-buttons {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    flex-wrap: wrap;         
+    gap: 20px;              
+}
+
+.navigation-buttons a {
+    padding: 10px 20px;
+    border: 2px solid #766541;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #4d422c;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation-buttons a:hover {
+    background-color: #310202;
+    color: #fcefe6;
+}
+    
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+        <a href="historicalwebsite2.html"><i class='far fa-flag'></i>Top 10</a>
+        <a href="about us.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="recent.html" id="recent-btn"><i class="fas fa-clock"></i> Recent</a>
+        <a href="ratings.html"><i class="fas fa-star"></i> Ratings</a>
+      </div>
+
+  <header>
+    <h1>Antonio Luna</h1>
+    <p class="subtitle">The Fiery General of the Philippine Revolution</p>
+    <img src="Antonio_luna_small.jpg" alt="Antonio Luna" class="profile-img">
+  </header>
+
+  <div class="content">
+    <section class="section-container bio-container">
+      <h2>Biography</h2>
+      <img src="A_luna.webp" alt="Young Antonio Luna" class="portrait-img">
+      <p>Antonio Luna (October 29, 1866 – June 5, 1899) was a Filipino scientist, soldier, journalist, and general who played a key role during the Philippine-American War. He was one of the most brilliant military minds of his time and is remembered for his fierce nationalism and military discipline.</p>
+      <p>Born in Binondo, Manila, to a wealthy family, Antonio was the younger brother of renowned painter Juan Luna. He studied chemistry and pharmacy in Spain and earned a doctorate in Pharmacy. Despite his academic brilliance, Antonio chose to fight for his country’s freedom.</p>
+      <br>
+      <div class="quote-box">
+        <p>"To be a good soldier, you must love the country above all else."</p>
+        <p>— Antonio Luna</p>
+      </div>
+      <div class="fact-box">
+        <h3>Did You Know?</h3>
+        <p>Antonio Luna was a trained scientist and military strategist. He published scholarly papers in Europe and studied military tactics in Belgium before joining the revolution.</p>
+      </div>
+    </section>
+
+    <section class="section-container">
+      <h2>Role in the Philippine-American War</h2>
+      <div class="image-container">
+        <img src="luna2.jpg" alt="Antonio Luna commanding troops">
+        <img src="luna3.webp" alt="Luna in trenches">
+      </div>
+      <p>Antonio Luna was appointed Director of War by President Emilio Aguinaldo. He quickly reorganized the Filipino army, implementing strict discipline and modern battlefield tactics, including guerrilla warfare and trench systems.</p>
+      <p>He founded the "Luna Sharpshooters" and "Black Guard," elite units known for their courage. He established a military academy in Malolos and introduced strategic defenses that slowed American advances.</p>
+      <p>Luna’s reforms and leadership won him respect and fear. However, his strictness also earned him enemies within the ranks and among political rivals.</p>
+    </section>
+
+    <section class="section-container">
+      <h2>Death and Controversy</h2>
+      <img src="luna4.jpg" alt="Luna assassination" style="float: right; width: 40%; margin-left: 25px;">
+      <p>On June 5, 1899, Luna was assassinated in Cabanatuan, Nueva Ecija, after being summoned by President Aguinaldo. He was stabbed and shot by Aguinaldo’s guards under suspicious circumstances.</p>
+      <ul>
+        <li>Assassinated outside the Cabanatuan convent</li>
+        <li>No one was formally punished for his death</li>
+        <li>His murder remains one of the most controversial moments in Philippine history</li>
+      </ul> 
+      <p>Many historians believe Luna’s increasing power and outspoken criticism of incompetent officials led to his elimination by political rivals.</p>
+      <br>
+      <div class="clear"></div>
+      <div class="fact-box">
+        <h3>Aftermath</h3>
+        <p>Following Luna's death, the Philippine military suffered due to lack of strong leadership, contributing to eventual defeat by American forces.</p>
+      </div>
+    </section>
+
+    <section class="section-container">
+      <h2>Legacy and Honors</h2>
+      <div class="image-container">
+        <img src="General_Antonio_Luna_statue_(wide_shot).jpg" alt="Antonio Luna Monument">
+        <img src="LUNAS GRAVE.webp" alt="Antonio Luna's grave" style="width: 30%;">
+      </div>
+      <p>Antonio Luna remains a symbol of bravery, intelligence, and discipline in Philippine history.</p>
+      <ul>
+        <li>His image appears on the ₱5 coin (older version)</li>
+        <li>A statue honors him at the Plaza Lucero in Cabanatuan</li>
+        <li>He is buried at Manila North Cemetery</li>
+        <li>Numerous schools, streets, and buildings are named after him</li>
+      </ul>
+      <div class="quote-box">
+        <p>"If I had ten Antonio Lunas, I could have won this war." — Apocryphal quote attributed to Aguinaldo</p>
+      </div>
+    </section>
+
+    <section class="section-container">
+      <h2>Personal Life and Character</h2>
+      <img src="luna family.jpg" alt="Antonio Luna family" style="float: left; width: 40%; margin-right: 25px;">
+      <p>Antonio Luna was known for:</p>
+      <ul>
+        <li>Sharp wit and fiery temper</li>
+        <li>Love for science, literature, and music</li>
+        <li>Uncompromising patriotism</li>
+        <li>Fierce discipline and military precision</li>
+        <li>Deep loyalty to his vision of a free Philippines</li>
+      </ul>
+      <div class="clear"></div>
+      <div class="fact-box">
+        <h3>Cultural Significance</h3>
+        <p>Antonio Luna represents:</p>
+        <ul>
+          <li>The fusion of intellect and courage in a revolutionary leader</li>
+          <li>The dangers of political intrigue during revolutionary periods</li>
+          <li>The ideal of uncompromising service to the nation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="timeline-container">
+      <h2>Timeline of Antonio Luna's Life</h2>
+      <ul>
+        <li><strong>October 29, 1866:</strong> Born in Binondo, Manila</li>
+        <li><strong>1880s:</strong> Studied pharmacy and chemistry in Spain</li>
+        <li><strong>1890s:</strong> Became a journalist and nationalist writer</li>
+        <li><strong>1898:</strong> Joined Philippine army and appointed Director of War</li>
+        <li><strong>1899:</strong> Led battles in Central Luzon</li>
+        <li><strong>June 5, 1899:</strong> Assassinated in Cabanatuan</li>
+        <li><strong>Early 1900s:</strong> Posthumous recognition as national hero</li>
+        <li><strong>2015:</strong> Portrayed in the film *Heneral Luna*</li>
+      </ul>
+    </section>
+
+    <section class="section-container">
+      <h2>Antonio Luna in Popular Culture</h2>
+      <div class="works-grid">
+        <div class="work-card">
+          <img src="luna movie.jpg" alt="Heneral Luna film">
+          <div class="work-info">
+            <h3>*Heneral Luna* (2015)</h3>
+            <p>Award-winning film portraying his life and death, starring John Arcilla</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <img src="heneral.jpg" alt="Antonio Luna biography">
+          <div class="work-info">
+            <h3>*Antonio Luna: Hero or Hothead?*</h3>
+            <p>A modern biography exploring the myths and truths behind the general</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <img src="s-l400.png" alt="Antonio Luna stamp">
+          <div class="work-info">
+            <h3>Philippine Postal Stamp</h3>
+            <p>Commemorative stamp issued for National Heroes Day</p>
+          </div>
+          <div class="resources">
+            <h3>Additional Resources:</h3>
+            <ul>
+                <li><a href="https://www.britannica.com/biography/Antonio-Luna" target="_blank">Britannica - Antonio Luna Biography</a></li>
+                <li><a href="https://nhcp.gov.ph/antonio-luna/" target="_blank">National Historical Commission - Luna Profile</a></li>
+                <li><a href="https://www.officialgazette.gov.ph/featured/antonio-luna/" target="_blank">Official Gazette - Luna Collection</a></li>
+                <li><a href="https://kahimyang.com/kauswagan/articles/1611/today-in-philippine-history-october-29-1866-antonio-luna-was-born-in-urquiza-street-binondo-manila" target="_blank">Kahimyang - Luna Historical Timeline</a></li>
+                <li><a href="https://filipiknow.net/general-antonio-luna-facts/" target="_blank">FilipiKnow - 10 Facts About Gen. Luna</a></li>
+                <li><a href="https://www.philippine-history.org/antonio-luna.htm" target="_blank">Philippine History - The Fierce General</a></li>
+            </ul>
+        </div>
+        </div>
+      </div>
+    </section>
+  </div> 
+  <div class="navigation-buttons">
+    <a href="pilar.html">&larr; Previous</a>
+    <a href="aquino.html">Next &rarr;</a>
+  </div>
+  <br>
+  <footer>
+    <p>Antonio Luna (1866–1899) | The Fiery General | Hero of the Philippine-American War</p>
+  </footer>
+</body>
+</html>
+
+

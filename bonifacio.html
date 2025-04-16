@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Andrés Bonifacio: The Great Plebeian</title>
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #5f0707;
+        }
+        .navbar {
+            background-color: #4a3728;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar a {
+            color: #fce8b2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #f3d89f;
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+        .subtitle {
+    color: white;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4b1515;
+            color: white;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            margin: 0;
+        }
+        .profile-img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 20px;
+            object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 4px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            font-size: 1.8em;
+            color: #5f0606;
+            border-bottom: 2px solid #4b1515;
+            padding-bottom: 10px;
+        }
+        .section-container {
+            margin-bottom: 50px;
+        }
+        .bio-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            width: 48%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .image-container img:hover {
+            transform: scale(1.02);
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #333;
+            text-align: center;
+        }
+        .portrait-img {
+            width: 40%;
+            float: left;
+            margin: 0 25px 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        }
+        .clear {
+            clear: both;
+        }
+        .timeline-container {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #4b1515;
+        }
+        .timeline-container ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+        .timeline-container li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            line-height: 1.6;
+        }
+        .timeline-container li:before {
+            content: "•";
+            color: #4b1515;
+            font-size: 1.8em;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        .timeline-container strong {
+            color: #4b1515;
+        }
+        .quote-box {
+            background-color: #f5e8e8;
+            padding: 20px;
+            border-left: 5px solid #4b1515;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        .quote-box p {
+            margin: 0;
+            color: #4b1515;
+        }
+        .fact-box {
+            background-color: #e8f1f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .fact-box h3 {
+            color: #1a3e72;
+            margin-top: 0;
+            border-bottom: 2px solid #1a3e72;
+            padding-bottom: 5px;
+        }
+        footer p{
+            text-align: center;
+            padding: 20px;
+            background-color: #1a0808;
+            color: white;
+            width: 100%;
+            margin-top: 50px;
+        }
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .work-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+        .work-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .work-info {
+            padding: 15px;
+        }
+        .work-info h3 {
+            margin-top: 0;
+            color: #4b1515;
+        }
+    
+        .resources {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            border-left: 4px solid #4b1515;
+        }
+        .resources h3 {
+            margin-top: 0;
+            color: #4b1515;
+        }
+        .resources a {
+            color: #1a3e72;
+            text-decoration: none;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+        .resources ul {
+            padding-left: 20px;
+        }
+        .navigation-buttons {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    flex-wrap: wrap;         
+    gap: 20px;              
+}
+
+.navigation-buttons a {
+    padding: 10px 20px;
+    border: 2px solid #766541;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #4d422c;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation-buttons a:hover {
+    background-color: #310202;
+    color: #fcefe6;
+}
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+        <a href="historicalwebsite2.html"><i class='far fa-flag'></i>Top 10</a>
+        <a href="about us.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="recent.html" id="recent-btn"><i class="fas fa-clock"></i> Recent</a>
+        <a href="ratings.html"><i class="fas fa-star"></i> Ratings</a>
+    </div>
+    
+    <header>
+        <h1>Andrés Bonifacio</h1>
+        <p class="subtitle">The Father of the Philippine Revolution</p>
+        <img src="boni1.jpg" alt="Andrés Bonifacio" class="profile-img">
+    </header>
+    
+    <div class="content">
+        <section class="section-container">
+            <h2>Biography</h2>
+            <img src="bonifacio2.jpg" alt="Andrés Bonifacio Youth" class="portrait-img">
+            <p>Andrés Bonifacio y de Castro (November 30, 1863 – May 10, 1897) was a Filipino revolutionary leader and the supreme leader of the Katipunan, the secret society that ignited the Philippine Revolution against Spanish colonial rule. Known as "The Great Plebeian," Bonifacio rose from humble beginnings to become one of the most important figures in Philippine history.</p>
+            
+            <p>Born in Tondo, Manila to Santiago Bonifacio and Catalina de Castro, Andrés was the eldest of six children. His parents died when he was young, forcing him to quit school and support his siblings by making and selling wooden canes and paper fans. Despite limited formal education, Bonifacio was self-taught, reading books about the French Revolution, biographies of US presidents, and novels like Victor Hugo's "Les Misérables" which influenced his revolutionary ideals.</p>
+            
+            <div class="quote-box">
+                <p>"What matters death if one dies for what one loves, for native land and adored beings?"</p>
+                <p>— Andrés Bonifacio</p>
+            </div>
+            
+            <div class="fact-box">
+                <h3>Did You Know?</h3>
+                <p>Bonifacio was multilingual, fluent in Tagalog and Spanish, and could understand some English. He worked as a clerk for a British firm, J.M. Fleming & Co., and later as a salesman for the German trading company Fressell & Co.</p>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2>The Katipunan Revolution</h2>
+            <div class="image-container">
+                <img src="Andres-Bonifacio.jpg" alt="Katipunan Movement">
+                <img src="Bonifacio-Cry_of_Pugadlawin-1896.jpg" alt="Cry of Balintawak">
+            </div>
+            <p>On July 7, 1892, the same day José Rizal was exiled to Dapitan, Bonifacio founded the Katipunan (officially Kataas-taasan, Kagalang-galangang Katipunan ng mga Anak ng Bayan or KKK) with fellow patriots Ladislao Diwa, Teodoro Plata, and others. The secret society aimed for complete independence from Spain through armed revolution.</p>
+            
+            <p>Bonifacio served as the Katipunan's Supremo (Supreme Leader) and developed its structure, rituals, and teachings. He authored several Katipunan documents including the "Decalogue" (Ten Commandments of the Katipunan) and the poem "Pag-ibig sa Tinubuang Lupa" (Love for One's Homeland).</p>
+            
+            <p>In August 1896, after the Katipunan was discovered by Spanish authorities, Bonifacio and his followers tore their cedulas (community tax certificates) at Pugad Lawin in what became known as the "Cry of Pugad Lawin" or "Cry of Balintawak," marking the beginning of the Philippine Revolution.</p>
+        </section>
+
+        <section class="section-container">
+            <h2>Leadership and Contributions</h2>
+            <img src="boni2.webp" alt="Bonifacio leading revolution" style="float: right; width: 40%; margin-left: 25px;">
+            <p>As military leader, Bonifacio:</p>
+            <ul>
+                <li>Organized and commanded revolutionary forces in Manila and surrounding provinces</li>
+                <li>Established a revolutionary government with him as President in 1896</li>
+                <li>Issued the "Katipunan Code" to govern revolutionary conduct</li>
+                <li>Designed the Katipunan flag featuring a sun with eight rays representing the first eight provinces to revolt</li>
+            </ul>
+            
+            <p>Bonifacio's leadership style was egalitarian. He believed in the power of the masses (the "plebeians") and rejected the elitism of the ilustrado class. His revolutionary government was based on the Katipunan's principles of equality, fraternity, and liberty.</p>
+            
+            <div class="clear"></div>
+            
+            <div class="fact-box">
+                <h3>Revolutionary Writings</h3>
+                <p>Bonifacio was an accomplished writer who produced:</p>
+                <ul>
+                    <li>"Ang Dapat Mabatid ng mga Tagalog" (What the Tagalogs Should Know)</li>
+                    <li>"Katungkulang Gagawin ng mga Anak ng Bayan" (Duties of the Sons of the Country)</li>
+                    <li>Poems like "Pag-ibig sa Tinubuang Lupa" (Love for the Homeland)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2>Conflict with Aguinaldo and Tragic End</h2>
+            <div class="image-container">
+                <img src="tejeros-convention-bonifacio-nagbunot-01.webp" alt="Tejeros Convention">
+                <img src="Bonifacio-Trial-House.jpg" alt="Bonifacio Trial">
+            </div>
+            <p>In March 1897, the revolutionary leaders held the Tejeros Convention to establish a new government. Despite being the Katipunan's founder, Bonifacio lost the presidential election to Emilio Aguinaldo. When Bonifacio's supporters protested electoral irregularities, violence erupted.</p>
+            
+            <p>Aguinaldo's faction later arrested Bonifacio and his brother Procopio on charges of treason and sedition. After a controversial trial, they were sentenced to death. On May 10, 1897, Andrés and Procopio were executed in the mountains of Maragondon, Cavite.</p>
+            
+            <div class="quote-box">
+                <p>"The revolution has no need of academic degrees; it needs ardent patriots!"</p>
+                <p>— Andrés Bonifacio's response to critics of his lack of formal education</p>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2>Legacy and Honors</h2>
+            <img src="bonifacio monument.jpg" alt="Bonifacio Monument" style="float: left; width: 40%; margin-right: 25px;">
+            <p>Though his life ended tragically, Bonifacio's legacy lives on:</p>
+            <ul>
+                <li>Officially recognized as one of the Philippines' greatest national heroes</li>
+                <li>Featured on the Philippine 10-peso coin and 20-peso bill</li>
+                <li>Bonifacio Day celebrated every November 30 as a national holiday</li>
+                <li>Numerous monuments nationwide, most notably the Bonifacio Monument in Caloocan</li>
+                <li>Several cities, streets, and institutions named in his honor</li>
+            </ul>
+            
+            <div class="clear"></div>
+            
+            <div class="fact-box">
+                <h3>Controversies and Historical Debates</h3>
+                <p>Historians continue to debate:</p>
+                <ul>
+                    <li>Whether Bonifacio should be considered the first Philippine President</li>
+                    <li>The fairness of his trial and execution</li>
+                    <li>His exact role versus Aguinaldo in the Revolution</li>
+                    <li>The location of the "Cry" that started the Revolution</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-container">
+            <h2>Timeline of Bonifacio's Life</h2>
+            <ul>
+                <li><strong>November 30, 1863:</strong> Born in Tondo, Manila</li>
+                <li><strong>1880s:</strong> Worked as a clerk and salesman while self-educating</li>
+                <li><strong>July 7, 1892:</strong> Founded the Katipunan</li>
+                <li><strong>August 1896:</strong> Led the "Cry of Pugad Lawin" starting the Revolution</li>
+                <li><strong>March 22, 1897:</strong> Lost presidency to Aguinaldo at Tejeros Convention</li>
+                <li><strong>April-May 1897:</strong> Arrested, tried, and sentenced to death</li>
+                <li><strong>May 10, 1897:</strong> Executed in Maragondon, Cavite at age 33</li>
+                <li><strong>1918:</strong> First official recognition as national hero</li>
+            </ul>
+        </section>
+
+        <section class="section-container">
+            <h2>Bonifacio in Popular Culture</h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <img src="bonifacio movie.jpg" alt="Bonifacio: Ang Unang Pangulo">
+                    <div class="work-info">
+                        <h3>Bonifacio: Ang Unang Pangulo (2014)</h3>
+                        <p>Biographical film starring Robin Padilla as Bonifacio</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img src="SUPREMO-01_1200x1200.webp" alt="Supremo book">
+                    <div class="work-info">
+                        <h3>"Supremo: The Story of Andrés Bonifacio"</h3>
+                        <p>Definitive biography by historian Glenn Anthony May</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img src="bonifacio music.webp" alt="Bonifacio musical">
+                    <div class="work-info">
+                        <h3>"Bonifacio: Isang Sarswela"</h3>
+                        <p>Musical about Bonifacio's life by the Philippine Educational Theater Association</p>
+                    </div>
+                
+                </div>
+            </div>
+           
+            <div class="resources">
+                <h3>Additional Resources:</h3>
+                <ul>
+                    <li><a href="https://www.britannica.com/biography/Andres-Bonifacio" target="_blank">Britannica - Andres Bonifacio Biography</a></li>
+                    <li><a href="https://nhcp.gov.ph/andres-bonifacio/" target="_blank">National Historical Commission - Bonifacio Profile</a></li>
+                    <li><a href="https://www.officialgazette.gov.ph/featured/bonifacio/" target="_blank">Official Gazette - Bonifacio Collection</a></li>
+                    <li><a href="https://kahimyang.com/kauswagan/articles/1595/today-in-philippine-history-november-30-1863-andres-bonifacio-was-born-in-tondo-manila" target="_blank">Kahimyang - Bonifacio Historical Timeline</a></li>
+                    <li><a href="https://filipino.biz.ph/history/bonifacio.html" target="_blank">Filipino.biz - The Life of Andres Bonifacio</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+        </section>
+    </div>
+    <div class="navigation-buttons">
+        <a href="rizal.html">&larr; Previous</a>
+        <a href="aguinaldo.html">Next &rarr;</a>
+      </div>
+    <footer>
+        <p>Andrés Bonifacio (1863-1897) | The Great Plebeian | Father of the Philippine Revolution</p>
+    </footer>
+</body>
+</html>
+
